@@ -4,6 +4,7 @@
 - **`dailydata.py`**: Automated daily stock data collection from Polygon API
 - **`companydata.py`**: Company data collection and storage using yfinance
 - **`dtw.py`**: Main Streamlit application for pattern scanning and analysis
+- **`dtwacross.py`**: Compare stocks against all templates and archive new patterns
 - **`rollingretun.py`**: Technical indicator calculations and rolling returns
 
 
@@ -28,6 +29,11 @@ python companydata.py    # Collect company data
 4. Launch the main application:
 ```bash
 streamlit run dtw.py
+```
+
+   To analyze all templates simultaneously:
+```bash
+streamlit run dtwacross.py
 ```
 
 ## Dependencies
