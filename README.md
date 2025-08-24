@@ -1,6 +1,3 @@
-# Core Trading Pattern Analysis
-
-A focused collection of Python scripts for stock trading pattern analysis using Dynamic Time Warping (DTW) algorithms and technical indicators.
 
 ## Core Files
 
@@ -9,12 +6,6 @@ A focused collection of Python scripts for stock trading pattern analysis using 
 - **`dtw.py`**: Main Streamlit application for pattern scanning and analysis
 - **`rollingretun.py`**: Technical indicator calculations and rolling returns
 
-## Features
-
-- **Pattern Recognition**: DTW algorithms for finding similar stock patterns
-- **Data Collection**: Automated daily data collection and storage
-- **Technical Analysis**: Rolling returns, moving averages, and rankings
-- **Company Information**: Financial metrics and company data
 
 ## Setup
 
@@ -49,13 +40,6 @@ streamlit run dtw.py
 - yfinance
 - sqlite3
 - multiprocessing
-
-## Usage
-
-The system provides pattern recognition capabilities:
-- Compare stocks against predefined templates
-- Find stocks similar to a target ticker
-- Export results to Excel for further analysis
 
 ## Database
 
