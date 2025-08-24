@@ -1,6 +1,5 @@
 import yfinance as yf
 import sqlite3
-from datetime import datetime
 import requests
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import logging
@@ -12,6 +11,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 url = 'https://raw.githubusercontent.com/rreichel3/US-Stock-Symbols/main/all/all_tickers.txt'
 DB_NAME = 'tradeapp.db'
 # Removed API key as it's not used and should not be in code.
+
 
 def get_tickers():
     try:
@@ -39,6 +39,7 @@ def create_table(conn):
         share_float INTEGER,
         revenue_growth REAL,
         earnings_growth REAL,
+        feature_vector TEXT,
         PRIMARY KEY (Ticker)
     )
     ''')
@@ -78,7 +79,7 @@ def insert_stock_data(ticker_symbol):
                 'analyst_opinions': safe_get(info, 'numberOfAnalystOpinions', 0),
                 'share_float': safe_get(info, 'floatShares', 0),
                 'revenue_growth': safe_get(info, 'revenueGrowth', 0) * 100,
-                'earnings_growth': safe_get(info, 'earningsGrowth', 0) * 100
+                'earnings_growth': safe_get(info, 'earningsGrowth', 0) * 100,
             }
 
             columns = ', '.join(data.keys())
